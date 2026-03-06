@@ -76,7 +76,7 @@ img {
 /* Styling for a footer section to take a bit of spcae at the bottom of the page */
 .footer{
     background-color: rgb(71, 71, 71);
-    color: white;
+    color: rgb(45, 167, 110);
     text-align: right;
     padding: 3em 3em;
 }
