@@ -29,6 +29,7 @@ img {
     position: relative;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.35);
 }
 /* Big text styling for the hero section */
 .hero-text {
@@ -45,6 +46,8 @@ img {
     padding: 0.4em 3em;
     background-color: rgb(40, 150, 90);
     border-radius: 16px;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.35);
+    border: 2px solid rgb(225,140,40);
     width: 70%;
     margin: 2em auto 0 auto;
 }
