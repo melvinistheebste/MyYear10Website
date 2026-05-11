@@ -10,7 +10,7 @@ html {
 
     background-attachment: fixed;
 }
-/*reset for images to ensure they are 100% of the parent container width */
+/* keep images within their containers */
 img {
     width: 100%;
     border-radius: 14px;
@@ -36,7 +36,7 @@ img {
     font-family: 'Archivo Black', sans-serif;
     font-size: 4em;
 }
-/*Topic title banner */
+/* Topic title banner */
 .topic-title {
     font-family: 'Archivo Black', sans-serif;
     color: white;
@@ -52,13 +52,24 @@ img {
     margin: 2em auto 0 auto;
 }
 /* Three column grid */
-.topic-content{
+.topic-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4em;
     width: 70%;
     margin: 3em auto;
 }
+/* Topic content container for centering */
+.topic-content.flex-center {
+    display: flex;
+    justify-content: center;
+}
+.topic-content.flex-center .topic-card {
+    width: 30%;
+    min-width: 300px;
+}
+/* -------------------------------------------------- */
+
 /* Topic cards */
 .topic-card {
     background-color: rgb(34, 90, 60);
