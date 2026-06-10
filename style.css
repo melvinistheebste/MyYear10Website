@@ -133,10 +133,11 @@ img {
     padding: 0.3em 1em;
     border: 2px solid rgb(225, 140, 40);
     border-radius: 20px;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 
 .nav-tabs a:hover {
     background-color: rgb(225, 140, 40);
     color: rgb(25, 60, 40);
+    transform: translateY(-6px);
 }
