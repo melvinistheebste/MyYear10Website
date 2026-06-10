@@ -3,6 +3,7 @@
 /* A simple css reset */
 body,
 html {
+    scroll-behavior: smooth;
     background: radial-gradient(circle at top,
             rgb(40, 120, 70) 0%,
             rgb(25, 60, 40) 40%,
@@ -110,4 +111,32 @@ img {
     padding: 3em 3em;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+}
+
+/* Navigation tabs */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    background-color: rgb(25, 60, 40);
+    padding: 1em 2em;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-tabs a {
+    color: rgb(225, 140, 40);
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0.3em 1em;
+    border: 2px solid rgb(225, 140, 40);
+    border-radius: 20px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-tabs a:hover {
+    background-color: rgb(225, 140, 40);
+    color: rgb(25, 60, 40);
 }
