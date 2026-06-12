@@ -11,7 +11,7 @@
 <body>
 
     <!-- Navigation Tabs --------------------------------------------------------------------------------------- -->
-    <nav class="nav-tabs">
+    <nav class="nav-tabs" id="nav-tabs">
         <a href="#image-creation">Image Creation</a>
         <a href="#computer-science">Computer Science</a>
         <a href="#3d-modelling">3D Modelling</a>
@@ -87,7 +87,7 @@
             </div>
             <div class="topic-card">
                 <img src="images/image.png" style="image-rendering: auto;">
-                <h1 class="topic-card-text">Treasure Chest/h1>
+                <h1 class="topic-card-text">Treasure Chest</h1>
             </div>
         </div>
     </section>
@@ -100,6 +100,37 @@
         <span class="footer-right">67</span>
     </footer>
 
+    <script>
+        const nav = document.getElementById('nav-tabs');
+        let lastScroll = 0;
+        let ticking = false;
+        let ignoreScroll = false;
+
+        window.addEventListener('scroll', () => {
+            if (ignoreScroll) return;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScroll = window.pageYOffset;
+                    if (currentScroll > lastScroll) {
+                        nav.classList.add('hidden');
+                    } else {
+                        nav.classList.remove('hidden');
+                    }
+                    lastScroll = currentScroll;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        nav.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                nav.classList.remove('hidden');
+                ignoreScroll = true;
+                setTimeout(() => { ignoreScroll = false; }, 800);
+            });
+        });
+    </script>
     <!-- The end of the whole page- no more content after this! -->
 </body>
 
