@@ -139,5 +139,5 @@ img {
 .nav-tabs a:hover {
     background-color: rgb(225, 140, 40);
     color: rgb(25, 60, 40);
-    transform: translateY(-6px);
+    transform: translateY(-3px);
 }
