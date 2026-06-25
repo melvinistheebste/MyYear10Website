@@ -12,14 +12,13 @@
 
     <!-- Navigation Tabs --------------------------------------------------------------------------------------- -->
     <nav class="nav-tabs" id="nav-tabs">
-        <a href="#hero">Top</a>
         <a href="#image-creation">Image Creation</a>
         <a href="#computer-science">Computer Science</a>
         <a href="#3d-modelling">3D Modelling</a>
     </nav>
 
     <!-- The Hero Section -------------------------------------------------------------------------------------- -->
-    <section class="hero" id="hero">
+    <section class="hero">
     </section>
 
     <!-- Topic one ------------------------------------------------------------------------------------------------- -->
@@ -94,12 +93,9 @@
     </section>
     <!-- End of topic Three------------------------------------------------------------------------------------------ -->
 
-    <!-- Scroll to top button -->
-    <button id="scroll-top" aria-label="Scroll to top">&uarr;</button>
-
     <!-- A Simple Website Footer ------------------------------------------------------------------------------ -->
     <footer class="footer">
-        <span class="footer-left">&copy; 2026 Melvin Showcase Website</span>
+        <span class="footer-left">&copy; 2026 My Showcase Website By Melvi>er >n Gitonga</span>
         <span class="footer-right">677</span>
     </footer>
 
@@ -110,10 +106,7 @@
         let ignoreScroll = false;
 
         window.addEventListener('scroll', () => {
-            if (ignoreScroll) {
-                lastScroll = window.pageYOffset;
-                return;
-            }
+            if (ignoreScroll) return;
             if (!ticking) {
                 window.requestAnimationFrame(() => {
                     const currentScroll = window.pageYOffset;
@@ -122,7 +115,6 @@
                     } else {
                         nav.classList.remove('hidden');
                     }
-                    scrollBtn.classList.toggle('visible', nav.classList.contains('hidden'));
                     lastScroll = currentScroll;
                     ticking = false;
                 });
@@ -130,32 +122,12 @@
             }
         });
 
-        const scrollBtn = document.getElementById('scroll-top');
-
         nav.querySelectorAll('a').forEach(a => {
             a.addEventListener('click', () => {
                 nav.classList.remove('hidden');
                 ignoreScroll = true;
                 setTimeout(() => { ignoreScroll = false; }, 800);
             });
-        });
-
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Fade in on scroll
-        const fadeEls = document.querySelectorAll('.topic-title, .topic-card');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.15 });
-        fadeEls.forEach(el => {
-            el.classList.add('fade-in');
-            observer.observe(el);
         });
     </script>
     <!-- The end of the whole page- no more content after this! -->
